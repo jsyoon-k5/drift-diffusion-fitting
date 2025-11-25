@@ -1,0 +1,31 @@
+============================================================
+Device Information Log
+Timestamp: 2025-11-24 19:13:38
+============================================================
+
+[System Information]
+OS: Windows 10
+Platform: Windows-10-10.0.19045-SP0
+Processor: AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
+Architecture: AMD64
+
+[CPU Information]
+Physical cores: 12
+Logical cores: 24
+CPU frequency: 3701.00 MHz (max: 3701.00 MHz)
+CPU usage: 4.8%
+
+[RAM Information]
+Total: 63.93 GB
+Available: 33.60 GB
+Used: 30.32 GB (47.4%)
+
+[GPU Information]
+GPU 0: NVIDIA GeForce RTX 3060
+  Memory Total: 12288 MiB
+  Memory Used: 2012 MiB
+  Memory Free: 10104 MiB
+  Driver Version: 560.94
+  Compute Capability: 8.6
+
+============================================================

@@ -1,0 +1,54 @@
+learning_rate: 0.0001
+lr_gamma: 0.9
+clipping: 0.5
+point_estimation: true
+data_grouping:
+  enabled: false
+  group_size: 10
+  aggregation_features:
+  - mean
+  - std
+arch:
+  device: null
+  trial_encoder_type: attention
+  encoder:
+    traj_sz: 0
+    stat_sz: 2
+    batch_norm: true
+    traj_encoder_type: transformer
+    conv1d: []
+    mlp:
+      feat_sz: 128
+      out_sz: 64
+      depth: 2
+  trial_encoder:
+    attention:
+      num_latents: 4
+      n_block: 2
+      query_sz: 32
+      out_sz: 32
+      head_sz: 8
+      n_head: 4
+      attn_dropout: 0.4
+      res_dropout: 0.4
+      context_sz: 64
+  invertible:
+    param_sz: null
+    n_block: 5
+    act_norm: true
+    invert_conv: true
+    batch_norm: false
+    block:
+      permutation: false
+      head_depth: 2
+      head_sz: 32
+      cond_sz: 32
+      feat_sz: 32
+      depth: 2
+  linear:
+    out_sz: 3
+    in_sz: 32
+    hidden_sz: 128
+    hidden_depth: 2
+    batch_norm: false
+    activation: relu

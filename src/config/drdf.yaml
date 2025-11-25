@@ -1,0 +1,39 @@
+# Drift diffusion simulation configuration
+
+## Summary of parameters
+# a: Decision boundary
+# mu: drift rate
+# T_er: mean of non-decision time
+# eta: inter-trial standard deviation of drift rate
+# sigma: within-trial standard deviation of drift rate
+# z: starting position (usually set as a/2 for choice-reaction and 0 for simple reaction)
+# s_z: range of z variability
+# s_t: range of non-decision time variability
+# step_size: simulation time step size
+# a_z_ratio: ratio of decision boundary to starting position
+
+default:
+  # Adjustable parameters
+  a: [0.045, 0.18]
+  mu: [0.00, 0.50]
+  T_er: [0.05, 0.40]
+
+  # Fixed parameters
+  eta: 0.1067
+  s_z: 0.0321
+  s_t: 0.0943
+  sigma: 0.1
+  step_size: 0.00005     # 0.05 ms
+  a_z_ratio: 2.0
+
+
+example_setup:
+  a: [0.03, 0.25]
+  mu: [0.00, 0.50]
+  T_er: [0.05, 0.50]
+  eta: [0.05, 0.20]
+  s_z: 0.0321
+  s_t: 0.0943
+  sigma: 0.1
+  step_size: 0.00005
+  a_z_ratio: 2.0

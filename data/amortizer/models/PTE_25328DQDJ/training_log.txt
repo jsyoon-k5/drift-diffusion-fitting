@@ -1,0 +1,5 @@
+[ Training Dataset Loaded ] Total parameter sets: 8192, trials per parameter set: 80
+Time: 2025-11-24 17:41:11 | Iter 025: Avg. Loss = 0.045215 | Steps = 128 | Batch Size = 64 | Recovery R2 = 0.93
+Time: 2025-11-24 17:41:51 | Iter 050: Avg. Loss = 0.042902 | Steps = 128 | Batch Size = 64 | Recovery R2 = 0.93
+Time: 2025-11-24 17:42:29 | Iter 075: Avg. Loss = 0.032584 | Steps = 128 | Batch Size = 64 | Recovery R2 = 0.94
+Time: 2025-11-24 17:43:07 | Iter 100: Avg. Loss = 0.025469 | Steps = 128 | Batch Size = 64 | Recovery R2 = 0.94

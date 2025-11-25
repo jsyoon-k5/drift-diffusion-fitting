@@ -1,0 +1,79 @@
+### Data configuration for inference engine input
+### Normalization, behavior feature selection
+data:
+  default:
+    n_trial: 80   # Simulation per parameter set
+    feature: [reaction_time, correct]
+    range:
+      reaction_time:
+        min: -3.0
+        max: 3.0
+      correct:
+        min: -1.0
+        max: 1.0
+
+
+engine:
+  default:
+    learning_rate: 0.0001
+    lr_gamma: 0.9
+    clipping: 0.5
+    point_estimation: True
+
+    data_grouping:
+      enabled: False
+      group_size: 10
+      aggregation_features: [mean, std] # Options: mean, std, min, max, median
+
+    arch:
+      device: null
+      trial_encoder_type: attention
+
+      encoder:
+        traj_sz: 0
+        stat_sz: null   # Number of features
+        batch_norm: True
+        traj_encoder_type: transformer  # ["transformer", "conv_rnn"]
+        
+        conv1d: []
+
+        mlp:  # Static
+          feat_sz: 128   # 64~128
+          out_sz: 64    # mlp out_sz
+          depth: 2
+
+
+      trial_encoder:
+        attention:
+          num_latents: 4
+          n_block: 2
+          query_sz: 32
+          out_sz: 32
+          head_sz: 8
+          n_head: 4
+          attn_dropout: 0.4
+          res_dropout: 0.4
+
+      # Conditional INN - density estimation
+      invertible:
+        param_sz: null  # The number of parameters
+        n_block: 5
+        act_norm: True
+        invert_conv: True
+        batch_norm: False
+        block:
+          permutation: False
+          head_depth: 2
+          head_sz: 32
+          cond_sz: 32
+          feat_sz: 32
+          depth: 2
+      
+      # MLP - point estimation
+      linear:
+        out_sz: null  # The number of parameters
+        in_sz: null   # Trial encoder output size
+        hidden_sz: 128
+        hidden_depth: 2
+        batch_norm: False
+        activation: relu
